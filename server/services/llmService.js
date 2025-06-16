@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // llmService.js
-
-=======
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
@@ -45,11 +41,10 @@ const tools = [
         ],
       },
     },
-  },
+  }
 ];
 
 const inlinePrompt = `
-<<<<<<< HEAD
 You are CardMate, a friendly and helpful credit card assistant for Indian users.
 
 🎯 Your job:
@@ -74,56 +69,16 @@ Known inputs so far:
 `;
 
 const fewShotExamples = [
-  {
-    role: "user",
-    content: "Hey I want a credit card"
-  },
-  {
-    role: "assistant",
-    content: "Sure! To help you better, can you share your monthly income (even an estimate is okay)?"
-  },
-  {
-    role: "user",
-    content: "₹25000"
-  },
-  {
-    role: "assistant",
-    content: "Great! Now, can you tell me your monthly spending on fuel?"
-  },
-  {
-    role: "user",
-    content: "I think around ₹1500"
-  },
-  {
-    role: "assistant",
-    content: "Thanks 😊 What about travel, groceries, and dining? Rough numbers are fine!"
-  }
+  { role: "user", content: "Hey I want a credit card" },
+  { role: "assistant", content: "Sure! To help you better, can you share your monthly income (even an estimate is okay)?" },
+  { role: "user", content: "₹25000" },
+  { role: "assistant", content: "Great! Now, can you tell me your monthly spending on fuel?" },
+  { role: "user", content: "I think around ₹1500" },
+  { role: "assistant", content: "Thanks 😊 What about travel, groceries, and dining? Rough numbers are fine!" }
 ];
 
 exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
   let assistantResponseText = "I'm having trouble understanding that. Could you try rephrasing?";
-=======
-You are CardMate, a smart and helpful credit card advisor for Indian users.
-
-Your task is to understand the user's financial habits and recommend the best credit card based on the following key criteria:
-1. Monthly income (in INR)
-2. Monthly spending in: fuel, travel, groceries, dining
-3. Preferred benefits (choose from cashback, travel points, lounge access, movie offers, shopping vouchers, fuel benefits, dining perks)
-4. Credit score (if known, else accept 'unknown')
-
-👉 Ask one missing detail at a time.
-👉 If the user gives many at once, acknowledge each and focus on the next missing one.
-👉 Politely ignore irrelevant queries and steer the conversation back on track.
-👉 Use extract_user_info tool **immediately** when all fields are provided.
-👉 After tool call, say:  
-“Great! I now have all your details and can provide tailored credit card recommendations. Would you like to see them?”
-
-Be friendly, natural, and adaptive.
-`;
-
-exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
-  let assistantResponseText = "I'm having trouble understanding right now. Could you rephrase?";
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
   let extractedInputs = {};
   let conversationComplete = false;
   let toolCalls = [];
@@ -132,14 +87,9 @@ exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
     const messagesForOpenAI = [
       {
         role: 'system',
-<<<<<<< HEAD
         content: `${inlinePrompt} ${JSON.stringify(llmContext.userInputs || {})}`
       },
       ...fewShotExamples,
-=======
-        content: `${inlinePrompt}\n\nCurrent user inputs: ${JSON.stringify(llmContext.userInputs || {})}`
-      },
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
       ...llmContext.chatHistory.map(msg => ({
         role: msg.role === 'user' ? 'user' : 'assistant',
         content: msg.content
@@ -153,13 +103,8 @@ exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: messagesForOpenAI,
-<<<<<<< HEAD
       temperature: 0.6,
       max_tokens: 500,
-=======
-      temperature: 0.7,
-      max_tokens: 400,
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
       tools: tools,
       tool_choice: "auto"
     });
@@ -198,12 +143,8 @@ exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
           if (allSet) {
             conversationComplete = true;
             if (!assistantResponseText) {
-<<<<<<< HEAD
               assistantResponseText =
                 "Awesome! I now have everything I need to recommend your top credit cards. Shall I continue?";
-=======
-              assistantResponseText = "Great! I now have all your details and can provide tailored credit card recommendations. Would you like to see them?";
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
             }
           }
         }
@@ -211,11 +152,7 @@ exports.getLLMResponseAndExtractInputs = async (llmContext, userMessage) => {
     }
   } catch (err) {
     console.error("OpenAI API Error:", err);
-<<<<<<< HEAD
     assistantResponseText = "Oops! Something went wrong. Please try again in a moment.";
-=======
-    assistantResponseText = "Sorry, I'm facing a technical issue right now. Please try again shortly.";
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
   }
 
   return {

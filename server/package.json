@@ -1,13 +1,20 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Credit Card Advisor backend using Node.js, Express, MongoDB, and OpenAI",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "credit-card",
+    "advisor",
+    "express",
+    "openai",
+    "mongodb"
+  ],
+  "author": "Your Name",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -18,10 +25,10 @@
     "mongoose": "^8.15.2",
     "openai": "^5.3.0",
     "sqlite3": "^5.1.7",
-<<<<<<< HEAD
     "twilio": "^5.7.1",
-=======
->>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
     "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
