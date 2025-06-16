@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log*
+.DS_Store # macOS generated files
+
+# Environment variables
+.env
+
+# SQLite Database files
+*.db # Matches credit_cards.db or any other .db file
+*.sqlite
+*.sqlite3
+
+# Log files (if any are generated)
+logs/
+*.log
+
+# Build artifacts (if you have a server build process)
+dist/
+build/
+
+# IDE files (e.g., VS Code)
+.vscode/
+.idea/
+
+# Editor backup files
+*~
+*.swp
