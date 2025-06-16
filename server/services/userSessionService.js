@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 // server/services/userSessionService.js
 
 const UserSession = require('../models/UserSession'); // Import the UserSession Mongoose model
+=======
+
+
+const UserSession = require('../models/UserSession'); 
+>>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
 
 /**
  * Retrieves a user session by its ID.
@@ -19,8 +25,13 @@ exports.getUserSession = async (sessionId) => {
 
 /**
  * Creates a new user session.
+<<<<<<< HEAD
  * @param {string} sessionId - The unique ID for the new session.
  * @returns {Promise<Object>} The newly created user session object.
+=======
+ * @param {string} sessionId 
+ * @returns {Promise<Object>} 
+>>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
  */
 exports.createUserSession = async (sessionId) => {
     try {
@@ -35,16 +46,26 @@ exports.createUserSession = async (sessionId) => {
 
 /**
  * Updates an existing user session.
+<<<<<<< HEAD
  * @param {string} sessionId - The ID of the session to update.
  * @param {Object} updatedData - The data to update the session with.
  * @returns {Promise<Object|null>} The updated user session object or null if not found.
+=======
+ * @param {string} sessionId 
+ * @param {Object} updatedData 
+ * @returns {Promise<Object|null>}
+>>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
  */
 exports.updateUserSession = async (sessionId, updatedData) => {
     try {
         const session = await UserSession.findOneAndUpdate(
             { sessionId: sessionId },
             { $set: updatedData },
+<<<<<<< HEAD
             { new: true, upsert: false } // new: true returns the updated document, upsert: false means don't create if not found
+=======
+            { new: true, upsert: false } 
+>>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
         );
         return session;
     } catch (error) {
@@ -54,9 +75,15 @@ exports.updateUserSession = async (sessionId, updatedData) => {
 };
 
 /**
+<<<<<<< HEAD
  * Deletes a user session. (Optional, useful for cleanup)
  * @param {string} sessionId - The ID of the session to delete.
  * @returns {Promise<Object|null>} The deleted user session object or null if not found.
+=======
+ * 
+ * @param {string} sessionId 
+ * @returns {Promise<Object|null>} 
+>>>>>>> 58c6a6f9741e896d2c7ea74b9fd400dbf706bf47
  */
 exports.deleteUserSession = async (sessionId) => {
     try {
