@@ -28,7 +28,8 @@ export default function Header() {
     color: activeTab === path ? '#000' : '#fff',
     backgroundColor: activeTab === path ? '#fff' : 'transparent',
     boxShadow: activeTab === path ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
-    transition: 'all 0.3s ease-in-out'
+    transition: 'all 0.3s ease-in-out',
+    textDecoration: 'none',
   });
 
   return (
@@ -44,7 +45,7 @@ export default function Header() {
         borderBottomRightRadius: '1.5rem',
         zIndex: 1000,
         transform: 'translateZ(0)',
-        backfaceVisibility: 'hidden'
+        backfaceVisibility: 'hidden',
       }}
     >
       <div className="container d-flex justify-content-between align-items-center px-3 flex-wrap">
@@ -74,25 +75,13 @@ export default function Header() {
             width: '250px',
             zIndex: 1100,
             background: 'rgba(30, 41, 59, 0.95)',
-            backdropFilter: 'blur(10px)'
+            backdropFilter: 'blur(10px)',
           }}
         >
           <button className="btn-close btn-close-white mb-4" onClick={() => setMenuOpen(false)}></button>
           <nav className="d-flex flex-column gap-3">
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              style={navLinkStyle('/')}
-            >
-              💬 Chat
-            </Link>
-            <Link
-              to="/summary"
-              onClick={() => setMenuOpen(false)}
-              style={navLinkStyle('/summary')}
-            >
-              🎯 Recommendations
-            </Link>
+            <Link to="/" onClick={() => setMenuOpen(false)} style={navLinkStyle('/')}>💬 Chat</Link>
+            <Link to="/summary" onClick={() => setMenuOpen(false)} style={navLinkStyle('/summary')}>🎯 Recommendations</Link>
           </nav>
         </div>
 
