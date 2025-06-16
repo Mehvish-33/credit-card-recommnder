@@ -1,6 +1,6 @@
-// server/services/userSessionService.js
 
-const UserSession = require('../models/UserSession'); // Import the UserSession Mongoose model
+
+const UserSession = require('../models/UserSession'); 
 
 /**
  * Retrieves a user session by its ID.
@@ -19,8 +19,8 @@ exports.getUserSession = async (sessionId) => {
 
 /**
  * Creates a new user session.
- * @param {string} sessionId - The unique ID for the new session.
- * @returns {Promise<Object>} The newly created user session object.
+ * @param {string} sessionId 
+ * @returns {Promise<Object>} 
  */
 exports.createUserSession = async (sessionId) => {
     try {
@@ -35,16 +35,16 @@ exports.createUserSession = async (sessionId) => {
 
 /**
  * Updates an existing user session.
- * @param {string} sessionId - The ID of the session to update.
- * @param {Object} updatedData - The data to update the session with.
- * @returns {Promise<Object|null>} The updated user session object or null if not found.
+ * @param {string} sessionId 
+ * @param {Object} updatedData 
+ * @returns {Promise<Object|null>}
  */
 exports.updateUserSession = async (sessionId, updatedData) => {
     try {
         const session = await UserSession.findOneAndUpdate(
             { sessionId: sessionId },
             { $set: updatedData },
-            { new: true, upsert: false } // new: true returns the updated document, upsert: false means don't create if not found
+            { new: true, upsert: false } 
         );
         return session;
     } catch (error) {
@@ -54,9 +54,9 @@ exports.updateUserSession = async (sessionId, updatedData) => {
 };
 
 /**
- * Deletes a user session. (Optional, useful for cleanup)
- * @param {string} sessionId - The ID of the session to delete.
- * @returns {Promise<Object|null>} The deleted user session object or null if not found.
+ * 
+ * @param {string} sessionId 
+ * @returns {Promise<Object|null>} 
  */
 exports.deleteUserSession = async (sessionId) => {
     try {
