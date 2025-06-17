@@ -4,10 +4,20 @@
 
 ---
 
-## 📽️ Demo
 
-[https://your-deployment-link.com  ](https://credit-card-ui.onrender.com)
-🎥 *Watch the full working screen recording in the repo or GitHub README preview*
+### 📽️ Live Demo
+
+Check out the walkthrough video here:  
+▶️ [Watch on YouTube](https://youtu.be/aMJvPLyfBvQ)
+
+---
+
+### 🌐 Deployed Links
+
+- 🔗 **Frontend (React + Streamlit UI)**: [https://credit-card-ui.onrender.com](https://credit-card-ui.onrender.com)  
+- 🔗 **Backend (Express + FastAPI)**: [https://credit-card-api.onrender.com](https://credit-card-api.onrender.com)  
+- 💬 **WhatsApp Chatbot**: Message `+14155238886` with `join able-space` to test
+
 
 ---
 
