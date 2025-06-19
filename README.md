@@ -82,14 +82,6 @@ The LLM agent uses structured prompting with tool invocation. Prompting logic en
 
 ---
 
-## 🧾 PDF Report Sample
-
-| 📌 Section         | 📄 Included in PDF Report |
-|--------------------|---------------------------|
-| User Info          | Monthly Income, Credit Score, Preferences |
-| Card Summary       | Top 3 matched cards with reward estimate |
-| Scoring Justification | Why each card suits the user best |
-| Timestamp + Branding | For audit/reference purposes |
 
 ---
 
@@ -211,7 +203,7 @@ npm start
 
 ## 👨‍💻 Author
 
-**Mehvish Idris**  
+**Mehvish Idrisi**  
 GitHub: [@Mehvish-33](https://github.com/Mehvish-33)
 
 ---
