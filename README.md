@@ -1,4 +1,4 @@
-# 💳 Credit Card Advisor – AI-Powered Recommendation System
+![image](https://github.com/user-attachments/assets/01c16caa-c5e0-426a-8ebe-70995c48a0c8)# 💳 Credit Card Advisor – AI-Powered Recommendation System
 
 > **A smart, humanized, AI-driven assistant that recommends credit cards based on user lifestyle, income, and preferences, with real-time chat, scoring engine, database integration, and WhatsApp support.**
 
@@ -64,6 +64,8 @@ The system is designed to feel human, smart, and visually polished — with a sm
          │  SQLite + Mongo │  ← Dual DB Storage
          └─────────────────┘
 ```
+
+![image](https://github.com/user-attachments/assets/256423f4-7f46-4758-a202-f0c93e1d5bbe)
 
 ---
 
