@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/01c16caa-c5e0-426a-8ebe-70995c48a0c8)# 💳 Credit Card Advisor – AI-Powered Recommendation System
+# 💳 Credit Card Advisor – AI-Powered Recommendation System
 
 > **A smart, humanized, AI-driven assistant that recommends credit cards based on user lifestyle, income, and preferences, with real-time chat, scoring engine, database integration, and WhatsApp support.**
 
