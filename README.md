@@ -14,7 +14,7 @@ Check out the walkthrough video here:
 
 ### 🌐 Deployed Links
 
-- 🔗 **Frontend (React + Streamlit UI)**: [https://credit-card-ui.onrender.com](https://credit-card-ui.onrender.com)  
+- 🔗 **Frontend (React ui )**: [https://credit-card-ui.onrender.com](https://credit-card-ui.onrender.com)  
 - 🔗 **Backend (Express + FastAPI)**: [https://credit-card-api.onrender.com](https://credit-card-api.onrender.com)  
 - 💬 **WhatsApp Chatbot**: Message `+14155238886` with `join able-space` to test
 
